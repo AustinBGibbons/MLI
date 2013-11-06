@@ -11,7 +11,7 @@ class LogisticRegressionSuite extends FunSuite with LocalSparkContext {
   val sampleData = Array(Array(1.0,10.0,12.0), Array(1.0,12.0,15.0), Array(-1.0,1.0,2.0), Array(-1.0,2.0,1.0))
 
   test("Basic test of logistic regression") {
-    sc = new SparkContext("local", "test")
+    sc = new SparkContext("local[1]", "test")
     val mc = new MLContext(sc)
 
 
@@ -27,6 +27,7 @@ class LogisticRegressionSuite extends FunSuite with LocalSparkContext {
     x = model.predict(MLVector(Array(0.0,0.0))).toNumber
     println("Model prediction for (-1.0,0.0): " + x)
     assert(x <= 0.5)
+    sc.stop()
   }
 
   test("Basic test of logistic regression via Parallel Gradient") {
@@ -39,6 +40,7 @@ class LogisticRegressionSuite extends FunSuite with LocalSparkContext {
 
     println(model.explain)
     assert(true)
+    sc.stop()
   }
 
 }
