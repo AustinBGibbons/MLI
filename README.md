@@ -1,4 +1,1 @@
-MLI
-===
-
-An API for Distributed Machine Learning
+See: https://github.com/AustinBGibbons/Coursera-MLBase
