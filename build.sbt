@@ -4,15 +4,15 @@ assemblySettings
 
 name := "MLI"
 
-version := "1.0"
+version := "1.0-SNAPSHOT"
 
-organization := "edu.berkeley.cs.amplab"
+organization := "me.edu.berkeley.cs.amplab"
 
 scalaVersion := "2.9.3"
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" % "spark-core_2.9.3" % "0.8.0-incubating",
-  "org.apache.spark" % "spark-mllib_2.9.3" % "0.8.0-incubating",
+  "me.org.apache.spark" % "spark-core_2.9.3" % "0.9.0-incubating-SNAPSHOT",
+  "me.org.apache.spark" % "spark-mllib_2.9.3" % "0.9.0-incubating-SNAPSHOT",
   "org.scalatest" %% "scalatest" % "1.9.1" % "test"
 )
 
